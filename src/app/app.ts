@@ -17,5 +17,5 @@ export class User {
 export class App {
   protected readonly title = signal('angular-dev');
 
-  city = 'San Francisco';
+  isServerRunning = true;
 }

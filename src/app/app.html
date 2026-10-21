@@ -1,1 +1,4 @@
-<app-user occupation="Angular Developer"></app-user>
+<app-user (incrementCountEvent)="addItem($event)"></app-user>
+@for (item of items; track $index) {
+  {{ item }}
+}

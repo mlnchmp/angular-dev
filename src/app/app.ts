@@ -1,12 +1,20 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 
 @Component({
   selector: 'app-user',
-  template: `<p>The user's name is {{ name() }}</p>`,
+  template: `<button (click)="onClick()">Add item</button>`,
 })
 export class User {
   username = "youngTech";
   name = input<string>("Tristan");
+  count = 0;
+
+  incrementCountEvent = output<number>();
+
+  onClick() {
+    this.count++;
+    this.incrementCountEvent.emit(this.count);
+  }
 }
 
 @Component({
@@ -17,6 +25,8 @@ export class User {
 })
 export class App {
   protected readonly title = signal('angular-dev');
+
+  items: number[] = [];
 
   isServerRunning = true;
 
@@ -40,5 +50,9 @@ export class App {
 
   showSecretMessage() {
     this.message = 'Way to go!';
+  }
+
+  addItem(event: number) {
+    this.items.push(event); 
   }
 }

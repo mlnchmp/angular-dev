@@ -30,4 +30,14 @@ export class App {
     { id: 0, name: 'Jessica'},
     { id: 0, name: 'Poorinima'}
   ]
+
+  message = ''; 
+
+  greet() {
+    console.log("Hello, there !");
+  }
+
+  showSecretMessage() {
+    this.message = 'Way to go!';
+  }
 }

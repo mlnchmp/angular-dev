@@ -19,6 +19,8 @@ export class App {
 
   isServerRunning = true;
 
+  isEditable = true;
+
   operatingSystems = [{id: 'win', name: 'Windows'}, {id: 'osx', name: 'macOS'}, {id: 'linux', name: 'Linux'}];
 
   users = [

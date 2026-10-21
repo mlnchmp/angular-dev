@@ -1,7 +1,15 @@
 import { Component, signal } from '@angular/core';
 
 @Component({
-  imports: [],
+  selector: 'app-user',
+  template: ` Username {{ username }}`,
+})
+export class User {
+  username = "youngTech";
+}
+
+@Component({
+  imports: [User],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',

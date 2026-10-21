@@ -1,15 +1,16 @@
-import { Component, signal } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-user',
-  template: ` Username {{ username }}`,
+  template: `<p>The user's name is {{ name() }}</p>`,
 })
 export class User {
   username = "youngTech";
+  name = input<string>("Tristan");
 }
 
 @Component({
-  imports: [],
+  imports: [User],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',
